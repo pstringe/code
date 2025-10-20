@@ -1,0 +1,43 @@
+#include <unistd.h>
+#	 Replace prototype  with vect
+# 	[int, f00007, [[int], [int]]]
+#	([int, f00007, [[int, (||(p|(|(p|[]))))], [int, (||(p|(||(p|[])))))]])]]] ...)
+# 	()
+
+int 	f0007 (int c0, int c1) { return ( (c0 ? c1 : c1 ) ); }
+
+int 	f0006 (int c0, int c1) { return ( (c0 ? c0 : c1 ) ); }
+
+int 	f0005 (int b0) { return b0 }
+
+int 	f0004 (int v0, int v1) { return (v0 * v1); }
+
+int 	f0003 (int v0, int v1) { return (v0 - v1); }
+
+int  	f0002 (int v0, int v1) { return (v0 + v1); }
+
+int 	f0001 (char c0, int i0) { return (c0 != '\0') ? f0006(c0, i0 + 1)) : i0; }
+
+int	f0000 (char c0) { write (1, &c0, f0001(s0)); }
+
+# f pointer (*f)(<type> {([0]<arg>) .. ([n]<arg>)})
+#	1, &c + 0, len
+#	1, &c + 1, len
+	...
+#	1, &c + n, len
+
+#	len c
+#	(== ([n] c) '\0')
+# 	(? (== ([n] c) '\0') {~()} (() (+ n 1))
+#	)
+
+int	main (int argc, char **argv) {
+	if (argc >= 2) {
+		f0000()
+	}
+	return (0);
+}
+
+
+# 0000 ({P {} {~P}} (P ({~P} (d (0001 {~P})))))
+# 0001 (< (p ..{}) {}) 
