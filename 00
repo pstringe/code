@@ -20,6 +20,9 @@ int 	f0001 (char c0, int i0) { return (c0 != '\0') ? f0006(c0, i0 + 1)) : i0; }
 
 int	f0000 (char c0) { write (1, &c0, f0001(s0)); }
 
+# 0 Rep func as state
+# Eval func for each itteration
+# 
 # f pointer (*f)(<type> {([0]<arg>) .. ([n]<arg>)})
 #	1, &c + 0, len
 #	1, &c + 1, len
